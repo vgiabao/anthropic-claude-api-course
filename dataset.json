@@ -1,0 +1,63 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "The phenomenology of aesthetic experience in postmodern literature reveals how narrative fragmentation simultaneously deconstructs authorial intention while reconstructing reader agency through intertextual references. Scholars have long debated whether such metafictional techniques represent a crisis of meaning or an expansion of interpretive possibility, yet this binary distinction obscures the dialectical relationship between textual instability and hermeneutic richness. The interplay between linguistic indeterminacy and cultural semiotics demonstrates how poststructuralist theory intersects with reader-response criticism, challenging traditional notions of coherent subjectivity and fixed textual meaning in contemporary literary analysis."
+    },
+    "solution_criteria": [
+      "Extracts all major abstract concepts and scholarly domains mentioned (e.g., phenomenology, aesthetic experience, postmodern literature, narrative fragmentation, metafiction, intertextuality, semiotics, poststructuralism, reader-response criticism)",
+      "Handles overlapping and interconnected concepts appropriately without excessive fragmentation or over-generalization",
+      "Returns results as a JSON array of strings with clear, readable topic labels"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a humanities passage containing overlapping and abstract concepts to verify topic extraction handles nuanced subject matter"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in CRISPR-Cas9 gene editing have revolutionized therapeutic applications through off-target mitigation strategies employing high-fidelity SpCas9 variants and paired nickases. The sgRNA design optimization utilizing machine learning algorithms has significantly reduced unintended genomic modifications while improving on-target cleavage efficiency by 87%. Furthermore, multiplexed delivery systems leveraging adeno-associated viral (AAV) vectors and non-viral lipid nanoparticles (LNPs) enable simultaneous editing of multiple loci, with particular promise in treating monogenic disorders such as spinal muscular atrophy (SMA) and transthyretin (TTR) amyloidosis through in vivo somatic gene therapy protocols."
+    },
+    "solution_criteria": [
+      "All specialized STEM topics and acronyms (CRISPR-Cas9, sgRNA, SpCas9, AAV, LNPs, SMA, TTR) are identified as distinct topics",
+      "Broader technical concepts (off-target mitigation, gene editing, cleavage efficiency, multiplexed delivery) are extracted as topics",
+      "Output is a valid JSON array of strings with no duplicates"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a highly technical STEM passage featuring domain-specific jargon and acronyms to ensure proper identification of specialized topics"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in neurotechnology have raised profound questions about personal identity and autonomy that intersect neurobiology, philosophy, and medical ethics. Brain-computer interfaces (BCIs) enable direct communication between neural tissue and external devices, allowing paralyzed patients to control prosthetic limbs through decoded motor cortex signals. However, this capability creates ethical dilemmas: if a BCI can read or potentially modify neural patterns associated with decision-making, does this compromise the autonomy of the user? Philosophers argue that our sense of self depends on the continuity of neural processes, yet BCIs introduce external computational elements into these processes. Furthermore, the potential for neural data misuse raises privacy concerns, as brain activity patterns could theoretically reveal intimate thoughts or be exploited by third parties. Neuroscientists must collaborate with ethicists to establish frameworks ensuring that neural augmentation technologies enhance rather than diminish human agency."
+    },
+    "solution_criteria": [
+      "Extracts topics spanning neurobiology (brain-computer interfaces, motor cortex, neural patterns), philosophy (personal identity, autonomy, continuity of self), and ethics (autonomy compromise, privacy, neural data misuse, human agency)",
+      "Identifies cross-cutting themes connecting multiple disciplines (e.g., autonomy appears in both philosophical and ethical contexts)",
+      "Returns results as a JSON array of strings with no extraneous fields"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a multi-disciplinary passage that spans several fields (e.g., neurobiology, philosophy, ethics) to assess extraction of cross-cutting themes"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The study examined how social media algorithms amplify polarization through selective content curation. Users exposed to personalized feeds showed increased political divisiveness, yet the mechanism underlying this phenomenon\u2014filter bubbles\u2014was never explicitly mentioned in the experimental design. The research revealed that engagement metrics drive algorithmic decisions, which in turn shapes public discourse and democratic participation. These findings suggest that platform architecture, though invisible to most users, fundamentally influences information access and cognitive frameworks."
+    },
+    "solution_criteria": [
+      "Extracts explicitly stated topics (social media algorithms, selective content curation, filter bubbles, engagement metrics, platform architecture)",
+      "Identifies contextually inferred topics (polarization, democratic participation, information access, cognitive frameworks) that are discussed but not directly named as primary subjects",
+      "Returns results as a JSON array of strings",
+      "Avoids including generic terms like 'study' or 'research' that lack substantive topical content"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing implicit vs. explicit topics to determine if the prompt extracts both directly stated and contextually inferred subjects"
+  },
+  {
+    "prompt_inputs": {
+      "content": "This study employs a mixed-methods approach combining quantitative regression analysis with qualitative thematic coding to examine the relationship between organizational culture and employee retention in tech companies. Our theoretical framework draws from Social Identity Theory and the Job Demands-Resources model, which posit that perceived organizational support mediates the effect of workplace autonomy on turnover intentions. We conducted semi-structured interviews with 45 HR managers across 12 companies and analyzed 2,847 employee survey responses using multilevel logistic regression. Key findings indicate that psychological safety, transparent communication practices, and career development opportunities are the primary drivers of retention, with effect sizes ranging from 0.42 to 0.68. These results challenge existing literature that emphasizes compensation as the dominant factor, suggesting instead that non-monetary workplace attributes play a more substantial role in predicting long-term employee commitment."
+    },
+    "solution_criteria": [
+      "Extracts content topics (e.g., employee retention, organizational culture, workplace autonomy, psychological safety) separately from methodological topics (e.g., mixed-methods approach, regression analysis, thematic coding)",
+      "Includes theoretical topics (e.g., Social Identity Theory, Job Demands-Resources model) as distinct from empirical findings",
+      "All extracted topics are represented as strings in a JSON array format"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing methodological and theoretical topics mixed with content topics to verify the prompt distinguishes between different types of topics"
+  }
+]

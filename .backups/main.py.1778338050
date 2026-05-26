@@ -1,0 +1,2 @@
+def greeting_tool(name: str) -> str:
+    return f"Hello, {name}!"

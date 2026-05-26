@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Credentials
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+*credential*
+*secret*
+.netrc
+id_rsa
+id_ed25519
+id_dsa
+id_ecdsa
+.aws/

@@ -1,0 +1,292 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">5</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">8.6 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">100.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a multi-disciplinary passage that spans several fields (e.g., neurobiology, philosophy, ethics) to assess extraction of cross-cutting themes</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in neurotechnology have raised profound questions about personal identity and autonomy that intersect neurobiology, philosophy, and medical ethics. Brain-computer interfaces (BCIs) enable direct communication between neural tissue and external devices, allowing paralyzed patients to control prosthetic limbs through decoded motor cortex signals. However, this capability creates ethical dilemmas: if a BCI can read or potentially modify neural patterns associated with decision-making, does this compromise the autonomy of the user? Philosophers argue that our sense of self depends on the continuity of neural processes, yet BCIs introduce external computational elements into these processes. Furthermore, the potential for neural data misuse raises privacy concerns, as brain activity patterns could theoretically reveal intimate thoughts or be exploited by third parties. Neuroscientists must collaborate with ethicists to establish frameworks ensuring that neural augmentation technologies enhance rather than diminish human agency.</td>
+                <td class="criteria">• Extracts topics spanning neurobiology (brain-computer interfaces, motor cortex, neural patterns), philosophy (personal identity, autonomy, continuity of self), and ethics (autonomy compromise, privacy, neural data misuse, human agency)<br>• Identifies cross-cutting themes connecting multiple disciplines (e.g., autonomy appears in both philosophical and ethical contexts)<br>• Returns results as a JSON array of strings with no extraneous fields</td>
+                <td class="output"><pre>```json
+[
+  "Brain-computer interfaces (BCIs)",
+  "Personal identity and autonomy",
+  "Neurotechnology ethics",
+  "Neural data privacy",
+  "Motor cortex signal decoding",
+  "Prosthetic limb control",
+  "Neural pattern modification",
+  "Decision-making and autonomy",
+  "Neural process continuity",
+  "Neural augmentation technologies",
+  "Neuroscience and ethics collaboration",
+  "Human agency",
+  "Paralysis treatment",
+  "Thought privacy concerns"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it returns a valid JSON array of strings containing topics from the passage, with no extraneous commentary or fields. It meets the secondary criteria by spanning all three disciplines and identifying cross-cutting themes like autonomy. The extraction is thorough and well-organized. The minor weaknesses relate to granularity and phrasing consistency rather than substantive omissions or errors. The solution demonstrates strong comprehension of the source material and appropriate topic extraction.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a highly technical STEM passage featuring domain-specific jargon and acronyms to ensure proper identification of specialized topics</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in CRISPR-Cas9 gene editing have revolutionized therapeutic applications through off-target mitigation strategies employing high-fidelity SpCas9 variants and paired nickases. The sgRNA design optimization utilizing machine learning algorithms has significantly reduced unintended genomic modifications while improving on-target cleavage efficiency by 87%. Furthermore, multiplexed delivery systems leveraging adeno-associated viral (AAV) vectors and non-viral lipid nanoparticles (LNPs) enable simultaneous editing of multiple loci, with particular promise in treating monogenic disorders such as spinal muscular atrophy (SMA) and transthyretin (TTR) amyloidosis through in vivo somatic gene therapy protocols.</td>
+                <td class="criteria">• All specialized STEM topics and acronyms (CRISPR-Cas9, sgRNA, SpCas9, AAV, LNPs, SMA, TTR) are identified as distinct topics<br>• Broader technical concepts (off-target mitigation, gene editing, cleavage efficiency, multiplexed delivery) are extracted as topics<br>• Output is a valid JSON array of strings with no duplicates</td>
+                <td class="output"><pre>```json
+[
+  "CRISPR-Cas9 gene editing",
+  "Off-target mitigation strategies",
+  "High-fidelity SpCas9 variants",
+  "Paired nickases",
+  "sgRNA design optimization",
+  "Machine learning algorithms",
+  "On-target cleavage efficiency",
+  "Genomic modifications",
+  "Multiplexed delivery systems",
+  "Adeno-associated viral (AAV) vectors",
+  "Non-viral lipid nanoparticles (LNPs)",
+  "Multiple loci editing",
+  "In vivo somatic gene therapy",
+  "Monogenic disorders",
+  "Spinal muscular atrophy (SMA)",
+  "Transthyretin (TTR) amyloidosis",
+  "Therapeutic gene editing applications"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it provides a valid JSON array of strings containing topics from the article with no extra commentary. It successfully identifies all specialized STEM topics and acronyms as distinct entries and extracts broader technical concepts as required by the secondary criteria. The extraction is thorough and accurate. The only minor issue is the inclusion of one slightly redundant/paraphrased topic ('Therapeutic gene editing applications') that wasn't explicitly stated as a distinct topic in the source text, though this is a very minor concern that doesn't significantly detract from an otherwise excellent response.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a humanities passage containing overlapping and abstract concepts to verify topic extraction handles nuanced subject matter</td>
+                <td class="prompt-inputs"><strong>content:</strong> The phenomenology of aesthetic experience in postmodern literature reveals how narrative fragmentation simultaneously deconstructs authorial intention while reconstructing reader agency through intertextual references. Scholars have long debated whether such metafictional techniques represent a crisis of meaning or an expansion of interpretive possibility, yet this binary distinction obscures the dialectical relationship between textual instability and hermeneutic richness. The interplay between linguistic indeterminacy and cultural semiotics demonstrates how poststructuralist theory intersects with reader-response criticism, challenging traditional notions of coherent subjectivity and fixed textual meaning in contemporary literary analysis.</td>
+                <td class="criteria">• Extracts all major abstract concepts and scholarly domains mentioned (e.g., phenomenology, aesthetic experience, postmodern literature, narrative fragmentation, metafiction, intertextuality, semiotics, poststructuralism, reader-response criticism)<br>• Handles overlapping and interconnected concepts appropriately without excessive fragmentation or over-generalization<br>• Returns results as a JSON array of strings with clear, readable topic labels</td>
+                <td class="output"><pre>```json
+[
+  "Aesthetic experience in postmodern literature",
+  "Narrative fragmentation",
+  "Authorial intention",
+  "Reader agency",
+  "Intertextual references",
+  "Metafictional techniques",
+  "Crisis of meaning",
+  "Interpretive possibility",
+  "Textual instability",
+  "Hermeneutic richness",
+  "Linguistic indeterminacy",
+  "Cultural semiotics",
+  "Poststructuralist theory",
+  "Reader-response criticism",
+  "Coherent subjectivity",
+  "Fixed textual meaning",
+  "Contemporary literary analysis",
+  "Dialectical relationship",
+  "Deconstruction"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it provides a JSON array of strings containing topics, with no extra commentary, and returns only the array. Against the secondary criteria, it successfully extracts nearly all major concepts and scholarly domains with appropriate handling of interconnected ideas. The omission of 'phenomenology'—explicitly stated in the opening and foundational to the passage's framework—is a notable gap. The inclusion of negatively-framed concepts ('Coherent subjectivity,' 'Fixed textual meaning') as topics is slightly questionable since they represent positions being critiqued rather than substantive discussion topics. These are minor issues in an otherwise comprehensive and well-structured extraction.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage containing implicit vs. explicit topics to determine if the prompt extracts both directly stated and contextually inferred subjects</td>
+                <td class="prompt-inputs"><strong>content:</strong> The study examined how social media algorithms amplify polarization through selective content curation. Users exposed to personalized feeds showed increased political divisiveness, yet the mechanism underlying this phenomenon—filter bubbles—was never explicitly mentioned in the experimental design. The research revealed that engagement metrics drive algorithmic decisions, which in turn shapes public discourse and democratic participation. These findings suggest that platform architecture, though invisible to most users, fundamentally influences information access and cognitive frameworks.</td>
+                <td class="criteria">• Extracts explicitly stated topics (social media algorithms, selective content curation, filter bubbles, engagement metrics, platform architecture)<br>• Identifies contextually inferred topics (polarization, democratic participation, information access, cognitive frameworks) that are discussed but not directly named as primary subjects<br>• Returns results as a JSON array of strings<br>• Avoids including generic terms like 'study' or 'research' that lack substantive topical content</td>
+                <td class="output"><pre>```json
+[
+  "Social media algorithms and polarization",
+  "Selective content curation",
+  "Filter bubbles",
+  "Political divisiveness",
+  "Personalized feeds",
+  "Engagement metrics",
+  "Algorithmic decision-making",
+  "Public discourse",
+  "Democratic participation",
+  "Platform architecture",
+  "Information access",
+  "Cognitive frameworks",
+  "User exposure to curated content",
+  "Invisible algorithm influence"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it provides a JSON array of strings containing topics, with no extra commentary, and nothing but the JSON array in the response. It successfully extracts explicitly stated topics and identifies contextually inferred topics as required by the secondary criteria. However, it includes a few entries that are either compound constructions or paraphrased inferences rather than distinct topics from the source material. These are minor issues that don't violate the core requirements but represent slight over-interpretation of what constitutes a 'topic' from the passage.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage containing methodological and theoretical topics mixed with content topics to verify the prompt distinguishes between different types of topics</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study employs a mixed-methods approach combining quantitative regression analysis with qualitative thematic coding to examine the relationship between organizational culture and employee retention in tech companies. Our theoretical framework draws from Social Identity Theory and the Job Demands-Resources model, which posit that perceived organizational support mediates the effect of workplace autonomy on turnover intentions. We conducted semi-structured interviews with 45 HR managers across 12 companies and analyzed 2,847 employee survey responses using multilevel logistic regression. Key findings indicate that psychological safety, transparent communication practices, and career development opportunities are the primary drivers of retention, with effect sizes ranging from 0.42 to 0.68. These results challenge existing literature that emphasizes compensation as the dominant factor, suggesting instead that non-monetary workplace attributes play a more substantial role in predicting long-term employee commitment.</td>
+                <td class="criteria">• Extracts content topics (e.g., employee retention, organizational culture, workplace autonomy, psychological safety) separately from methodological topics (e.g., mixed-methods approach, regression analysis, thematic coding)<br>• Includes theoretical topics (e.g., Social Identity Theory, Job Demands-Resources model) as distinct from empirical findings<br>• All extracted topics are represented as strings in a JSON array format</td>
+                <td class="output"><pre>```json
+[
+  "Organizational culture and employee retention",
+  "Tech companies",
+  "Mixed-methods research approach",
+  "Quantitative regression analysis",
+  "Qualitative thematic coding",
+  "Social Identity Theory",
+  "Job Demands-Resources model",
+  "Organizational support",
+  "Workplace autonomy",
+  "Turnover intentions",
+  "Semi-structured interviews",
+  "Employee survey responses",
+  "Multilevel logistic regression",
+  "Psychological safety",
+  "Transparent communication practices",
+  "Career development opportunities",
+  "Employee retention drivers",
+  "Effect sizes",
+  "Compensation and retention",
+  "Non-monetary workplace attributes",
+  "Employee commitment",
+  "HR management"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it provides a JSON array of strings containing topics from the passage, with no extra commentary, and the response contains only the JSON array. It also successfully meets the secondary criteria by clearly distinguishing between content topics (psychological safety, career development), methodological approaches (mixed-methods, multilevel logistic regression, semi-structured interviews), and theoretical frameworks (Social Identity Theory, Job Demands-Resources model). The extraction is comprehensive and accurate. The only minor weakness is slight redundancy in topic selection, but this does not violate any stated criteria and represents a very minor organizational issue rather than a substantive deficiency.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

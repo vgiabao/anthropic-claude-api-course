@@ -1,0 +1,88 @@
+[
+  {
+    "output": "```json\n[\n  \"Brain-computer interfaces (BCIs)\",\n  \"Personal identity and autonomy\",\n  \"Neurotechnology ethics\",\n  \"Neural data privacy\",\n  \"Motor cortex signal decoding\",\n  \"Prosthetic limb control\",\n  \"Neural pattern modification\",\n  \"Decision-making and autonomy\",\n  \"Neural process continuity\",\n  \"Neural augmentation technologies\",\n  \"Neuroscience and ethics collaboration\",\n  \"Human agency\",\n  \"Paralysis treatment\",\n  \"Thought privacy concerns\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in neurotechnology have raised profound questions about personal identity and autonomy that intersect neurobiology, philosophy, and medical ethics. Brain-computer interfaces (BCIs) enable direct communication between neural tissue and external devices, allowing paralyzed patients to control prosthetic limbs through decoded motor cortex signals. However, this capability creates ethical dilemmas: if a BCI can read or potentially modify neural patterns associated with decision-making, does this compromise the autonomy of the user? Philosophers argue that our sense of self depends on the continuity of neural processes, yet BCIs introduce external computational elements into these processes. Furthermore, the potential for neural data misuse raises privacy concerns, as brain activity patterns could theoretically reveal intimate thoughts or be exploited by third parties. Neuroscientists must collaborate with ethicists to establish frameworks ensuring that neural augmentation technologies enhance rather than diminish human agency."
+      },
+      "solution_criteria": [
+        "Extracts topics spanning neurobiology (brain-computer interfaces, motor cortex, neural patterns), philosophy (personal identity, autonomy, continuity of self), and ethics (autonomy compromise, privacy, neural data misuse, human agency)",
+        "Identifies cross-cutting themes connecting multiple disciplines (e.g., autonomy appears in both philosophical and ethical contexts)",
+        "Returns results as a JSON array of strings with no extraneous fields"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a multi-disciplinary passage that spans several fields (e.g., neurobiology, philosophy, ethics) to assess extraction of cross-cutting themes"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it returns a valid JSON array of strings containing topics from the passage, with no extraneous commentary or fields. It meets the secondary criteria by spanning all three disciplines and identifying cross-cutting themes like autonomy. The extraction is thorough and well-organized. The minor weaknesses relate to granularity and phrasing consistency rather than substantive omissions or errors. The solution demonstrates strong comprehension of the source material and appropriate topic extraction."
+  },
+  {
+    "output": "```json\n[\n  \"CRISPR-Cas9 gene editing\",\n  \"Off-target mitigation strategies\",\n  \"High-fidelity SpCas9 variants\",\n  \"Paired nickases\",\n  \"sgRNA design optimization\",\n  \"Machine learning algorithms\",\n  \"On-target cleavage efficiency\",\n  \"Genomic modifications\",\n  \"Multiplexed delivery systems\",\n  \"Adeno-associated viral (AAV) vectors\",\n  \"Non-viral lipid nanoparticles (LNPs)\",\n  \"Multiple loci editing\",\n  \"In vivo somatic gene therapy\",\n  \"Monogenic disorders\",\n  \"Spinal muscular atrophy (SMA)\",\n  \"Transthyretin (TTR) amyloidosis\",\n  \"Therapeutic gene editing applications\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in CRISPR-Cas9 gene editing have revolutionized therapeutic applications through off-target mitigation strategies employing high-fidelity SpCas9 variants and paired nickases. The sgRNA design optimization utilizing machine learning algorithms has significantly reduced unintended genomic modifications while improving on-target cleavage efficiency by 87%. Furthermore, multiplexed delivery systems leveraging adeno-associated viral (AAV) vectors and non-viral lipid nanoparticles (LNPs) enable simultaneous editing of multiple loci, with particular promise in treating monogenic disorders such as spinal muscular atrophy (SMA) and transthyretin (TTR) amyloidosis through in vivo somatic gene therapy protocols."
+      },
+      "solution_criteria": [
+        "All specialized STEM topics and acronyms (CRISPR-Cas9, sgRNA, SpCas9, AAV, LNPs, SMA, TTR) are identified as distinct topics",
+        "Broader technical concepts (off-target mitigation, gene editing, cleavage efficiency, multiplexed delivery) are extracted as topics",
+        "Output is a valid JSON array of strings with no duplicates"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a highly technical STEM passage featuring domain-specific jargon and acronyms to ensure proper identification of specialized topics"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it provides a valid JSON array of strings containing topics from the article with no extra commentary. It successfully identifies all specialized STEM topics and acronyms as distinct entries and extracts broader technical concepts as required by the secondary criteria. The extraction is thorough and accurate. The only minor issue is the inclusion of one slightly redundant/paraphrased topic ('Therapeutic gene editing applications') that wasn't explicitly stated as a distinct topic in the source text, though this is a very minor concern that doesn't significantly detract from an otherwise excellent response."
+  },
+  {
+    "output": "```json\n[\n  \"Aesthetic experience in postmodern literature\",\n  \"Narrative fragmentation\",\n  \"Authorial intention\",\n  \"Reader agency\",\n  \"Intertextual references\",\n  \"Metafictional techniques\",\n  \"Crisis of meaning\",\n  \"Interpretive possibility\",\n  \"Textual instability\",\n  \"Hermeneutic richness\",\n  \"Linguistic indeterminacy\",\n  \"Cultural semiotics\",\n  \"Poststructuralist theory\",\n  \"Reader-response criticism\",\n  \"Coherent subjectivity\",\n  \"Fixed textual meaning\",\n  \"Contemporary literary analysis\",\n  \"Dialectical relationship\",\n  \"Deconstruction\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The phenomenology of aesthetic experience in postmodern literature reveals how narrative fragmentation simultaneously deconstructs authorial intention while reconstructing reader agency through intertextual references. Scholars have long debated whether such metafictional techniques represent a crisis of meaning or an expansion of interpretive possibility, yet this binary distinction obscures the dialectical relationship between textual instability and hermeneutic richness. The interplay between linguistic indeterminacy and cultural semiotics demonstrates how poststructuralist theory intersects with reader-response criticism, challenging traditional notions of coherent subjectivity and fixed textual meaning in contemporary literary analysis."
+      },
+      "solution_criteria": [
+        "Extracts all major abstract concepts and scholarly domains mentioned (e.g., phenomenology, aesthetic experience, postmodern literature, narrative fragmentation, metafiction, intertextuality, semiotics, poststructuralism, reader-response criticism)",
+        "Handles overlapping and interconnected concepts appropriately without excessive fragmentation or over-generalization",
+        "Returns results as a JSON array of strings with clear, readable topic labels"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a humanities passage containing overlapping and abstract concepts to verify topic extraction handles nuanced subject matter"
+    },
+    "score": 8,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it provides a JSON array of strings containing topics, with no extra commentary, and returns only the array. Against the secondary criteria, it successfully extracts nearly all major concepts and scholarly domains with appropriate handling of interconnected ideas. The omission of 'phenomenology'\u2014explicitly stated in the opening and foundational to the passage's framework\u2014is a notable gap. The inclusion of negatively-framed concepts ('Coherent subjectivity,' 'Fixed textual meaning') as topics is slightly questionable since they represent positions being critiqued rather than substantive discussion topics. These are minor issues in an otherwise comprehensive and well-structured extraction."
+  },
+  {
+    "output": "```json\n[\n  \"Social media algorithms and polarization\",\n  \"Selective content curation\",\n  \"Filter bubbles\",\n  \"Political divisiveness\",\n  \"Personalized feeds\",\n  \"Engagement metrics\",\n  \"Algorithmic decision-making\",\n  \"Public discourse\",\n  \"Democratic participation\",\n  \"Platform architecture\",\n  \"Information access\",\n  \"Cognitive frameworks\",\n  \"User exposure to curated content\",\n  \"Invisible algorithm influence\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The study examined how social media algorithms amplify polarization through selective content curation. Users exposed to personalized feeds showed increased political divisiveness, yet the mechanism underlying this phenomenon\u2014filter bubbles\u2014was never explicitly mentioned in the experimental design. The research revealed that engagement metrics drive algorithmic decisions, which in turn shapes public discourse and democratic participation. These findings suggest that platform architecture, though invisible to most users, fundamentally influences information access and cognitive frameworks."
+      },
+      "solution_criteria": [
+        "Extracts explicitly stated topics (social media algorithms, selective content curation, filter bubbles, engagement metrics, platform architecture)",
+        "Identifies contextually inferred topics (polarization, democratic participation, information access, cognitive frameworks) that are discussed but not directly named as primary subjects",
+        "Returns results as a JSON array of strings",
+        "Avoids including generic terms like 'study' or 'research' that lack substantive topical content"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a passage containing implicit vs. explicit topics to determine if the prompt extracts both directly stated and contextually inferred subjects"
+    },
+    "score": 8,
+    "reasoning": "The solution meets all mandatory requirements: it provides a JSON array of strings containing topics, with no extra commentary, and nothing but the JSON array in the response. It successfully extracts explicitly stated topics and identifies contextually inferred topics as required by the secondary criteria. However, it includes a few entries that are either compound constructions or paraphrased inferences rather than distinct topics from the source material. These are minor issues that don't violate the core requirements but represent slight over-interpretation of what constitutes a 'topic' from the passage."
+  },
+  {
+    "output": "```json\n[\n  \"Organizational culture and employee retention\",\n  \"Tech companies\",\n  \"Mixed-methods research approach\",\n  \"Quantitative regression analysis\",\n  \"Qualitative thematic coding\",\n  \"Social Identity Theory\",\n  \"Job Demands-Resources model\",\n  \"Organizational support\",\n  \"Workplace autonomy\",\n  \"Turnover intentions\",\n  \"Semi-structured interviews\",\n  \"Employee survey responses\",\n  \"Multilevel logistic regression\",\n  \"Psychological safety\",\n  \"Transparent communication practices\",\n  \"Career development opportunities\",\n  \"Employee retention drivers\",\n  \"Effect sizes\",\n  \"Compensation and retention\",\n  \"Non-monetary workplace attributes\",\n  \"Employee commitment\",\n  \"HR management\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study employs a mixed-methods approach combining quantitative regression analysis with qualitative thematic coding to examine the relationship between organizational culture and employee retention in tech companies. Our theoretical framework draws from Social Identity Theory and the Job Demands-Resources model, which posit that perceived organizational support mediates the effect of workplace autonomy on turnover intentions. We conducted semi-structured interviews with 45 HR managers across 12 companies and analyzed 2,847 employee survey responses using multilevel logistic regression. Key findings indicate that psychological safety, transparent communication practices, and career development opportunities are the primary drivers of retention, with effect sizes ranging from 0.42 to 0.68. These results challenge existing literature that emphasizes compensation as the dominant factor, suggesting instead that non-monetary workplace attributes play a more substantial role in predicting long-term employee commitment."
+      },
+      "solution_criteria": [
+        "Extracts content topics (e.g., employee retention, organizational culture, workplace autonomy, psychological safety) separately from methodological topics (e.g., mixed-methods approach, regression analysis, thematic coding)",
+        "Includes theoretical topics (e.g., Social Identity Theory, Job Demands-Resources model) as distinct from empirical findings",
+        "All extracted topics are represented as strings in a JSON array format"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a passage containing methodological and theoretical topics mixed with content topics to verify the prompt distinguishes between different types of topics"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it provides a JSON array of strings containing topics from the passage, with no extra commentary, and the response contains only the JSON array. It also successfully meets the secondary criteria by clearly distinguishing between content topics (psychological safety, career development), methodological approaches (mixed-methods, multilevel logistic regression, semi-structured interviews), and theoretical frameworks (Social Identity Theory, Job Demands-Resources model). The extraction is comprehensive and accurate. The only minor weakness is slight redundancy in topic selection, but this does not violate any stated criteria and represents a very minor organizational issue rather than a substantive deficiency."
+  }
+]
